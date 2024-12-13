@@ -31,10 +31,43 @@ class Manager extends Employee
     }
 
     public function getDetails(){
-        
+        // return $this->getDetails(). ", Department: $this->department";
+        return parent::getDetails(). ", Department: $this->department";
+    }
+
+    public function contactMetting(){
+        return "$this->name is contacting meeting in the $this->department department";
     }
 
 }
 
-// $manager = new Manager();
-// $manager->
+
+class Developer extends Employee{
+    protected $programmingLanguage;
+
+    public function __construct($name, $salary, $programmingLanguage)
+    {
+        parent::__construct($name, $salary); // Call the parent class's constructor
+        $this->programmingLanguage = $programmingLanguage;
+    
+    }
+
+    public function getDetails(){
+        // return $this->getDetails(). ", Department: $this->department";
+        return parent::getDetails(). ", Programming Language: $this->programmingLanguage";
+    }
+
+    public function writeCode(){
+        return "$this->name is writing code in $this->programmingLanguage";
+    }
+}
+
+$manager = new Manager("ali hossain", "20k", "HR");
+$developer = new Developer("ali hossain", "20k", "PHP");
+// $developer = new Manager();
+
+// echo $manager->getDetails();
+// echo $manager->contactMetting();
+
+echo $developer->getDetails();
+echo $developer->writeCode();
