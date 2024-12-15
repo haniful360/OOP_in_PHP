@@ -1,5 +1,10 @@
 <?php
 
+
+// Method Overriding:
+
+// Both Manager and Developer override the getDetails method to include additional information.
+
 class Employee
 {
     protected $name;
@@ -53,7 +58,7 @@ class Developer extends Employee{
     }
 
     public function getDetails(){
-        // return $this->getDetails(). ", Department: $this->department";
+        // return $this->getDetails(). ", Department: $this->programmingLanguage";
         return parent::getDetails(). ", Programming Language: $this->programmingLanguage";
     }
 
@@ -70,4 +75,4 @@ $developer = new Developer("ali hossain", "20k", "PHP");
 // echo $manager->contactMetting();
 
 echo $developer->getDetails();
-echo $developer->writeCode();
+// echo $developer->writeCode();
