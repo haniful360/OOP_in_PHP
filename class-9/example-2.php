@@ -20,12 +20,12 @@ class Cat implements Animal
 
 class Dog implements Animal
 {
-    public function eat(): void
+    public function eat()
     {
-        echo "This Dog is Eating";
+        echo "This Dog is Eating <br>";
     }
 
-    public function sleep(): void
+    public function sleep()
     {
         echo "This Dog is sleeping";
     }
